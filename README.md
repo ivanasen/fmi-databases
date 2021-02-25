@@ -1,0 +1,1 @@
+# Exercises on the databases course at FMI
