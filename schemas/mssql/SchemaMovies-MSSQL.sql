@@ -1,6 +1,6 @@
 USE master
 GO
-if exists (select * from sysdatabases where name='movies')
+if exists (select * from sys.databases where name='movies')
 	DROP DATABASE movies
 GO
 

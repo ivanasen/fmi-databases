@@ -1,6 +1,6 @@
 USE master
 GO
-if exists (select * from sysdatabases where name='pc')
+if exists (select * from sys.databases where name='pc')
 	DROP DATABASE pc
 GO
 
