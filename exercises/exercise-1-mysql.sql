@@ -1,0 +1,85 @@
+-- Problem 1
+USE movies;
+
+SELECT ADDRESS
+FROM STUDIO
+WHERE NAME = 'MGM';
+
+SELECT BIRTHDATE
+FROM MOVIESTAR
+WHERE NAME = 'Sandra Bullock';
+
+SELECT NAME
+FROM MOVIESTAR
+WHERE NAME IN (
+    SELECT STARNAME
+    FROM STARSIN
+    WHERE MOVIEYEAR = 1980
+      AND MOVIETITLE LIKE '%Empire%'
+);
+
+SELECT NAME
+FROM MOVIEEXEC
+WHERE NETWORTH > 10000000;
+
+SELECT NAME
+FROM MOVIESTAR
+WHERE GENDER = 'M'
+   OR ADDRESS = 'Malibu';
+
+
+-- Problem 2
+USE pc;
+
+SELECT model, speed, hd
+FROM pc
+WHERE price < 1200;
+
+SELECT model, price * 1.1 AS priceEuro
+FROM pc p
+ORDER BY price;
+
+SELECT model, ram, screen
+FROM laptop
+WHERE price > 1000;
+
+SELECT *
+FROM printer
+WHERE color = 'y';
+
+SELECT model, speed, hd
+FROM pc
+WHERE (cd = '12x' OR cd = '16x')
+  AND price < 2000;
+
+SELECT code, model, speed + ram + 10 * screen as rating
+FROM laptop
+ORDER BY rating DESC, code;
+
+
+-- Problem 3
+USE ships;
+
+SELECT CLASS, COUNTRY
+FROM CLASSES
+WHERE NUMGUNS < 10;
+
+SELECT NAME AS shipName
+FROM SHIPS
+WHERE LAUNCHED < 1918;
+
+SELECT SHIP, BATTLE
+FROM OUTCOMES
+WHERE RESULT = 'sunk';
+
+SELECT NAME
+FROM SHIPS
+WHERE NAME = CLASS;
+
+SELECT NAME
+FROM SHIPS
+WHERE NAME LIKE 'R%';
+
+SELECT NAME
+FROM SHIPS
+WHERE NAME REGEXP '^[a-zA-Z]+ [a-zA-Z]+$';
