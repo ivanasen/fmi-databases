@@ -60,3 +60,8 @@ create table CourseParticipants
     constraint StudentFK
         foreign key (StudentFN) references Student (FacultyNumber)
 );
+
+-- no action
+--  cascade
+-- set null
+-- set default

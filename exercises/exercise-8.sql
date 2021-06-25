@@ -227,3 +227,6 @@ from CLASSES iowa
 where iowa.CLASS = 'Iowa';
 
 rollback tran
+
+-- ALTER TABLE table_name
+-- ADD column_name datatype;
